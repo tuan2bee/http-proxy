@@ -20,10 +20,7 @@ export default function handler(
   res: NextApiResponse<any>
 ) {
   req.url = req.url?.replace("api", "");
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://login-axios.vercel.app"
-  );
+  res.setHeader("Access-Control-Allow-Origin", "*");
   return new Promise((resolve) => {
     // convert cookies to header Authorization
     const cookies = new Cookies(req, res);

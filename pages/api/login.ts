@@ -19,10 +19,7 @@ export default function handler(
   res: NextApiResponse<Data>
 ) {
   req.url = req.url?.replace("api", "auth");
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://login-axios.vercel.app"
-  );
+  res.setHeader("Access-Control-Allow-Origin", "*");
   if (req.method !== "POST") {
     return res.status(404).json({ message: "method not supported" });
   }
